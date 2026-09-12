@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.mycom.springjdbcapidemo1.component.CommonProperties;
+import com.mycom.springjdbcapidemo1.exception.CustomException;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -27,6 +28,17 @@ public class HelloWorldService {
 		log.info("commonName: {}", commonName);
 		log.info("commonName: {}", this.commonProperties.getName());
 		return "Hello World!";
+	}
+
+	public String someService() {
+		try {
+			//....
+			return "ok";
+		} catch (CustomException e) {
+			throw e;
+		} catch (Exception e) {
+			throw new CustomException(500, e.getMessage(), true);
+		}
 	}
 
 }
