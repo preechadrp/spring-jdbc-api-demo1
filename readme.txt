@@ -1,4 +1,4 @@
-== spring boot demo เบื้องต้น ===
+== spring boot demo jdbc api เบื้องต้น ===
 - relax binding  (การ map ชื่อระหว่าง java กับ config/environment varible/database table field)
 
   camel case = companyTaxId    เริ่มด้วยตัวพิมพ์เล็กและแบ่งคำด้วยตัวใหญ่  (ใช้ตั้งชื่อตัวแปร)
