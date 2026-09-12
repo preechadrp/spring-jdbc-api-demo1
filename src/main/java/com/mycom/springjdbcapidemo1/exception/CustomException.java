@@ -17,11 +17,6 @@ public class CustomException extends RuntimeException {
 		this.errorCode = errorCode;
 	}
 
-	public CustomException(String message, boolean printStackTrace) {
-		super(message);
-		this.printStackTrace = printStackTrace;
-	}
-
 	public CustomException(int errorCode, String message, boolean printStackTrace) {
 		super(message);
 		this.errorCode = errorCode;
