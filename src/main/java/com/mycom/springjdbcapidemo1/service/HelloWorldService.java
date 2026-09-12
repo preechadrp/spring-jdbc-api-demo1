@@ -36,5 +36,4 @@ public class HelloWorldService {
 			throw new CustomException(500, e.getMessage(), true);
 		}
 	}
-
 }
