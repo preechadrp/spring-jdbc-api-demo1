@@ -24,16 +24,12 @@ public class HelloWorldService {
 	}
 
 	public String hello() {
-		log.info("HelloWorldService.hello() called");
-		log.info("commonName: {}", commonName);
-		log.info("commonName: {}", this.commonProperties.getName());
-		return "Hello World!";
-	}
-
-	public String someService() {
 		try {
 			//....todo something
-			return "ok";
+			log.info("HelloWorldService.hello() called");
+			log.info("commonName: {}", commonName);
+			log.info("commonName: {}", this.commonProperties.getName());
+			return "Hello World!";
 		} catch (CustomException e) {
 			throw e;
 		} catch (Exception e) {
