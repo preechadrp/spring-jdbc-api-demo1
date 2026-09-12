@@ -41,7 +41,7 @@ get http://localhost:8080/custorder/id/2011
 get http://localhost:8080/custorder/customer_name2012
 
 ###
-post http://localhost:8080/custorder-find-by-customer-name
+post http://localhost:8080/find-by-customer-name
 content-type: application/json;charset=UTF-8
 
 {
