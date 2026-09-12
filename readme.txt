@@ -49,6 +49,7 @@
   dao
   jsonNode/Jackson
   @Bean/CommandLineRunner
+  @Transactional  //TODO
   
 - junit
   @SpringBootTest  
