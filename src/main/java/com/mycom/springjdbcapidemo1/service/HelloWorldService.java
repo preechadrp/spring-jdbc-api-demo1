@@ -32,7 +32,7 @@ public class HelloWorldService {
 
 	public String someService() {
 		try {
-			//....
+			//....todo something
 			return "ok";
 		} catch (CustomException e) {
 			throw e;
