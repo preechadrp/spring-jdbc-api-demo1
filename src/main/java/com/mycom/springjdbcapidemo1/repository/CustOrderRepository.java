@@ -61,12 +61,7 @@ public class CustOrderRepository {
 
 	public List<CustOrder> findByCustomerName(String customerName) {
 		String sql = "SELECT * FROM cust_order where customer_name=? order by order_id";
-		var datas = jdbcTemplate.query(sql, rowMapper, new Object[] { customerName });
-		if (datas.size() > 0) {
-			return datas;
-		} else {
-			return null;
-		}
+		return jdbcTemplate.query(sql, rowMapper, new Object[] { customerName });
 	}
 
 	public int update(CustOrder custorder) {

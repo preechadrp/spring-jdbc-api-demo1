@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS `cust_order`;
+
 CREATE TABLE `cust_order` (  
   `order_id` int(11) NOT NULL COMMENT 'เลข order',
   `customer_name` varchar(250) NOT NULL COMMENT 'ชื่อลูกค้า',
