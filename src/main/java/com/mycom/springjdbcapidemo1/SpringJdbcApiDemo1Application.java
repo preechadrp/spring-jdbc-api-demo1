@@ -4,6 +4,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import com.mycom.springjdbcapidemo1.model.CustOrder;
 import com.mycom.springjdbcapidemo1.repository.CustOrderRepository;
@@ -11,6 +12,7 @@ import com.mycom.springjdbcapidemo1.repository.CustOrderRepository;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
+@EnableScheduling
 @SpringBootApplication
 public class SpringJdbcApiDemo1Application {
 
