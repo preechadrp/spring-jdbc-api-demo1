@@ -21,10 +21,10 @@ POST http://localhost:8080/user-jsonnode
 content-type: application/json;charset=UTF-8
 
 {
-  "userName": "postก",
+  "userName": "postกss",
   "email": "Joe@email.com",
   "password": "12345679",
-  "lastname": "mylast"
+  "test": "mylast"
 }
 
 ### test exception
@@ -34,17 +34,17 @@ get http://localhost:8080/custom-exception
 get http://localhost:8080/custorder
 
 ###
-get http://localhost:8080/custorder/id/3
+get http://localhost:8080/custorder/id/2011
 
 ###
-get http://localhost:8080/custorder/Customer1
+get http://localhost:8080/custorder/customer_name2012
 
 ###
 post http://localhost:8080/custorder-find-by-customer-name
 content-type: application/json;charset=UTF-8
 
 {
-  "customerName": "Customer4"
+  "customerName": "customer_name2012"
 }
 
 ### insert new order
@@ -58,5 +58,4 @@ content-type: application/json;charset=UTF-8
   "orderDate": "2026-09-05",
   "insertDatetime": "2026-09-05 19:41:30.085"
 }
-
 
