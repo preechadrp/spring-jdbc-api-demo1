@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.mycom.springjdbcapidemo1.model.CustOrder;
 import com.mycom.springjdbcapidemo1.repository.CustOrderRepository;
 
+@RestController
 public class CustOrderController {
 
 	private final CustOrderRepository custOrderRepository;
@@ -27,7 +29,7 @@ public class CustOrderController {
 	}
 
 	@GetMapping("/custorder/id/{orderId}")
-	public ResponseEntity<CustOrder> getCustOrderByOrderId(@PathVariable Integer orderId) {
+	public ResponseEntity<CustOrder> getCustOrderByOrderId(@PathVariable Integer orderId) {//TODO
 		return custOrderRepository.findById(orderId)
 				.map(ResponseEntity::ok)
 				.orElse(ResponseEntity.notFound().build());
