@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mycom.springjdbcapidemo1.dto.CustomerNameDto;
 import com.mycom.springjdbcapidemo1.model.CustOrder;
 import com.mycom.springjdbcapidemo1.repository.CustOrderRepository;
 
@@ -23,40 +24,31 @@ public class CustOrderController {
 	}
 
 	@GetMapping("/custorder")
-	public ResponseEntity<List<CustOrder>> getAllCustOrders() {
+	public List<CustOrder> getAllCustOrders() {
 		List<CustOrder> custOrders = custOrderRepository.findAll();
-		return ResponseEntity.ok(custOrders);
+		return custOrders;
 	}
 
 	@GetMapping("/custorder/id/{orderId}")
-	public ResponseEntity<CustOrder> getCustOrderByOrderId(@PathVariable Integer orderId) {//TODO
-		return custOrderRepository.findById(orderId)
-				.map(ResponseEntity::ok)
-				.orElse(ResponseEntity.notFound().build());
+	public CustOrder getCustOrderByOrderId(@PathVariable Integer orderId) {
+		var custOrder = custOrderRepository.findById(orderId);
+		return custOrder;
 	}
 
 	@GetMapping("/custorder/{customerName}")
-	public ResponseEntity<CustOrder> getCustOrderByCustomerName(@PathVariable String customerName) {
-		return custOrderRepository.findByCustomerName(customerName)
-				.map(ResponseEntity::ok)
-				.orElse(ResponseEntity.notFound().build());
+	public List<CustOrder> getCustOrderByCustomerName(@PathVariable String customerName) {
+		return custOrderRepository.findByCustomerName(customerName);
 	}
 
-	//	@PostMapping("/custorder-find-by-customer-name")
-	//	public ResponseEntity<CustOrder> getCustOrderByCustomerNameByPost(@RequestBody CustomerNameDto customerNameDto) {
-	//		return custOrderRepository.findByCustomerName(customerNameDto.customerName())
-	//				.map(ResponseEntity::ok)
-	//				.orElse(ResponseEntity.notFound().build());
-	//	}
-
-	//	@PostMapping("/custorder")
-	//	public CustOrder getCustOrderByCustomerNameByPost(@RequestBody CustOrder custOrder) {
-	//		return custOrderRepository.save(custOrder);
-	//	}
+	@PostMapping("/custorder-find-by-customer-name")
+	public List<CustOrder> getCustOrderByCustomerNameByPost(@RequestBody CustomerNameDto customerNameDto) {
+		return custOrderRepository.findByCustomerName(customerNameDto.customerName());
+	}
 
 	@PostMapping("/custorder")
 	public ResponseEntity<CustOrder> createCustOrder(@RequestBody CustOrder custOrder) {
 		custOrderRepository.insert(custOrder);
+		//return ResponseEntity.ok(custOrder);
 		return ResponseEntity.status(HttpStatus.CREATED).body(custOrder);// 201 Created status code
 	}
 }
