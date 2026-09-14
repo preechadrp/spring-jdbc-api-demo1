@@ -38,18 +38,18 @@
   ลำดับการอ่านค่า config
     -D > Environment Varible > application.properties/.yml > (./config > ./ > src/main/resources)
     ตัวอย่าง
-    1. .properties เช่น abc.companyTaxId=mycomp 
+    1. application.properties เช่น abc.companyTaxId=mycomp 
     2. Environment Varible เช่น ABC_COMPANY_TAX_ID=mycomp
     3. -D เช่น java -Dabc.companyTaxId=mycomp -jar myapp.jar
     
-- การเชื่อม database ด้วย spring jpa api
+- การเชื่อม database ด้วย spring jdbc api
   model  (@ToString, @Accessors(chain = true))
   repository
   dto
   dao
   jsonNode/Jackson
   @Bean/CommandLineRunner
-  @Transactional  //TODO
+  @Transactional
   
 - junit
   @SpringBootTest  
