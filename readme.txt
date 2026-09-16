@@ -14,7 +14,7 @@
      
 - lombok plugins for eclipse
 
-- Spring Boot Bean Annotations
+- Spring Boot Bean Annotations เมื่อใส่ที่ class แล้วระบบจะสร้างเป็น spring bean
   @Component
   @Service
   @Repository
