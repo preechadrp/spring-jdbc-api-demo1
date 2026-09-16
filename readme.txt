@@ -17,7 +17,8 @@
 - Spring Boot Bean Annotations เมื่อใส่ที่ class แล้วระบบจะสร้างเป็น spring bean
   @Component
   @Service
-  @Controller / @RestController
+  @Controller 
+  @RestController
   @Repository
   ฯลฯ
     
