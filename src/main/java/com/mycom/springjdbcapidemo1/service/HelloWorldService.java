@@ -19,6 +19,7 @@ public class HelloWorldService {
 
 	private final CommonProperties commonProperties;
 
+	//ใช้ constructor ในการเรียก bean ตัวอื่นมาใช้งาน
 	public HelloWorldService(CommonProperties commonProperties) {
 		this.commonProperties = commonProperties;
 	}
