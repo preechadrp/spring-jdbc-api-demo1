@@ -17,8 +17,8 @@
 - Spring Boot Bean Annotations เมื่อใส่ที่ class แล้วระบบจะสร้างเป็น spring bean
   @Component
   @Service
-  @Repository
   @Controller / @RestController
+  @Repository
   
 - เริ่ม api
   controller  (get,post)
