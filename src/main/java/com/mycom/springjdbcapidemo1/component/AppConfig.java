@@ -7,16 +7,16 @@ import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
-@Component("ShareConfig")
+@Component("AppConfig")
 @Getter
 @Slf4j
-public class ShareConfig {
+public class AppConfig {
 
 	/*
 	 * ตัวอย่างการอ่าน config แบบ @Value("${....}")
 	 */
 
-	private static ShareConfig instance;
+	private static AppConfig instance;
 
 	@Value("${app.common.name}")
 	private String name;
@@ -37,7 +37,7 @@ public class ShareConfig {
 	public void init() {
 		instance = this;//ช่วยให้ code แบบเก่าสามารถดึงไปใช้งานโดยไม่ต้องใช้หลักการ injection ของ spring
 
-		log.info("==== ShareConfig ====");
+		log.info("==== AppConfig ====");
 		log.info("name = {}", instance.getName());
 		log.info("db1Url = {}", instance.getDb1Url());
 		log.info("db1DriverClassName = {}", instance.getDb1DriverClassName());
@@ -46,8 +46,8 @@ public class ShareConfig {
 
 	}
 
-	public static ShareConfig getInstance() {
-		//ตัวอย่างการใช้งานเช่น   ShareConfig.getInstance().getDb1Url(); เป็นต้น
+	public static AppConfig getInstance() {
+		//ตัวอย่างการใช้งานเช่น   AppConfig.getInstance().getDb1Url(); เป็นต้น
 		return instance;
 	}
 }

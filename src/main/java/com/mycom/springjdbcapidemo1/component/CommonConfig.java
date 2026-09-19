@@ -9,7 +9,7 @@ import jakarta.annotation.PreDestroy;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
-@DependsOn("ShareConfig") //บอกให้สร้าง ShareConfig ก่อนสร้าง CommonConfig
+@DependsOn("AppConfig") //บอกให้สร้าง AppConfig ก่อนสร้าง CommonConfig
 @Component
 @Data
 @ConfigurationProperties(prefix = "app.common")
@@ -38,6 +38,9 @@ public class CommonConfig {
 		log.info("Proxy Port = {}", proxyPort);
 		log.info("Proxy Username = {}", proxyUsername);
 		log.info("Proxy Password = {}", proxyPassword);
+
+		//แบบไม่ต้องใส่ตอน constructor class ทดสอบแสดงข้อมูลจากการใช้ @DependsOn("AppConfig") 
+		log.info("AppConfig.getInstance().getName() = {}", AppConfig.getInstance().getName());
 	}
 
 	@PreDestroy

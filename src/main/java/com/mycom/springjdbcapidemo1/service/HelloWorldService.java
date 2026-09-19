@@ -3,8 +3,8 @@ package com.mycom.springjdbcapidemo1.service;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import com.mycom.springjdbcapidemo1.component.AppConfig;
 import com.mycom.springjdbcapidemo1.component.CommonConfig;
-import com.mycom.springjdbcapidemo1.component.ShareConfig;
 import com.mycom.springjdbcapidemo1.exception.CustomException;
 
 import lombok.extern.slf4j.Slf4j;
@@ -33,7 +33,7 @@ public class HelloWorldService {
 			log.info("this.commonConfig.getName() = {}", this.commonConfig.getName());
 
 			//แบบไม่ต้องใส่ตอน constructor class
-			log.info("ShareConfig.getInstance().getName() = {}", ShareConfig.getInstance().getName());
+			log.info("AppConfig.getInstance().getName() = {}", AppConfig.getInstance().getName());
 
 			return "Hello World!";
 		} catch (CustomException e) {
