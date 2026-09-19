@@ -43,6 +43,7 @@ public class AppConfig {
 	}
 
 	public static AppConfig getInstance() {
+		//ตัวอย่างการใช้งานเช่น   AppConfig.getInstance().getDb1Url(); เป็นต้น
 		return instance;
 	}
 }
