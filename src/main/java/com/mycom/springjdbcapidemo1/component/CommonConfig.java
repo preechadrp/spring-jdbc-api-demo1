@@ -12,13 +12,13 @@ import lombok.extern.slf4j.Slf4j;
 @Data
 @ConfigurationProperties(prefix = "app.common")
 @Slf4j
-public class CommonProperties {
+public class CommonConfig {
 
 	/*
 	 * ตัวอย่างการอ่าน config แบบ @ConfigurationProperties(prefix = "app.common")
 	 */
 
-	private static CommonProperties instance;
+	private static CommonConfig instance;
 
 	private String name;
 	private String db1Url;
@@ -46,7 +46,7 @@ public class CommonProperties {
 		log.info("Proxy Password: {}", proxyPassword);
 	}
 
-	public static CommonProperties getInstance() {
+	public static CommonConfig getInstance() {
 		return instance;
 	}
 
