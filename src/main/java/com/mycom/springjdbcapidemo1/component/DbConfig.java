@@ -23,7 +23,7 @@ public class DbConfig {
 
 	@PostConstruct
 	public void init() {
-		log.info("===== CommonConfig =====");
+		log.info("===== DbConfig =====");
 		log.info("DB1 URL = {}", db1Url);
 		log.info("DB1 DriverClassName = {}", db1DriverClassName);
 		log.info("DB1 Username = {}", db1Username);
