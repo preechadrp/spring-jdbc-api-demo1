@@ -12,32 +12,22 @@ import lombok.extern.slf4j.Slf4j;
 @DependsOn("AppConfig") //บอกให้สร้าง AppConfig ก่อนสร้าง CommonConfig
 @Component
 @Data
-@ConfigurationProperties(prefix = "app.common")
+@ConfigurationProperties(prefix = "custom-config.db")
 @Slf4j
-public class CommonConfig {
+public class DbConfig {
 
-	private String name;
 	private String db1Url;
 	private String db1DriverClassName;
 	private String db1Username;
 	private String db1Password;
-	private String proxyHost;
-	private int proxyPort;
-	private String proxyUsername;
-	private String proxyPassword;
 
 	@PostConstruct
 	public void init() {
 		log.info("===== CommonConfig =====");
-		log.info("Name = {}", name);
 		log.info("DB1 URL = {}", db1Url);
 		log.info("DB1 DriverClassName = {}", db1DriverClassName);
 		log.info("DB1 Username = {}", db1Username);
 		log.info("DB1 Password = {}", db1Password);
-		log.info("Proxy Host = {}", proxyHost);
-		log.info("Proxy Port = {}", proxyPort);
-		log.info("Proxy Username = {}", proxyUsername);
-		log.info("Proxy Password = {}", proxyPassword);
 
 		//แบบไม่ต้องใส่ตอน constructor class ทดสอบแสดงข้อมูลจากการใช้ @DependsOn("AppConfig") 
 		log.info("AppConfig.getInstance().getName() = {}", AppConfig.getInstance().getName());

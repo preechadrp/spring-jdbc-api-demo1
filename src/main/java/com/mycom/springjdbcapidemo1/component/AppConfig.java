@@ -18,20 +18,20 @@ public class AppConfig {
 
 	private static AppConfig instance;
 
-	@Value("${app.common.name}")
+	@Value("${custom-config.main.name}")
 	private String name;
 
-	@Value("${app.common.db1-url}")
-	private String db1Url;
+	@Value("${custom-config.main.proxy-host:}") //ถ้าไม่พบ config นี้ให้ใส่เป็นค่าว่างๆ
+	private String proxyHost;
 
-	@Value("${app.common.db1-driver-class-name}")
-	private String db1DriverClassName;
+	@Value("${custom-config.main.proxy-port:0}") //ถ้าไม่พบ config นี้ให้ใส่เป็น 0
+	private int proxyPort;
 
-	@Value("${app.common.db1-username}")
-	private String db1Username;
+	@Value("${custom-config.main.proxy-username}")
+	private String proxyUsername;
 
-	@Value("${app.common.db1-password}")
-	private String db1Password;
+	@Value("${custom-config.main.proxy-password}")
+	private String proxyPassword;
 
 	@PostConstruct
 	public void init() {
@@ -39,15 +39,15 @@ public class AppConfig {
 
 		log.info("==== AppConfig ====");
 		log.info("name = {}", instance.getName());
-		log.info("db1Url = {}", instance.getDb1Url());
-		log.info("db1DriverClassName = {}", instance.getDb1DriverClassName());
-		log.info("db1Username = {}", instance.getDb1Username());
-		log.info("db1Password = {}", instance.getDb1Password());
+		log.info("proxyHost = {}", instance.getProxyHost());
+		log.info("proxyPort = {}", instance.getProxyPort());
+		log.info("proxyUsername = {}", instance.getProxyUsername());
+		log.info("proxyPassword = {}", instance.getProxyPassword());
 
 	}
 
 	public static AppConfig getInstance() {
-		//ตัวอย่างการใช้งานเช่น   AppConfig.getInstance().getDb1Url(); เป็นต้น
+		//ตัวอย่างการใช้งานเช่น   AppConfig.getInstance().getName(); เป็นต้น
 		return instance;
 	}
 }
