@@ -18,7 +18,7 @@ public class CommonProperties {
 	 * ตัวอย่างการอ่าน config แบบ @ConfigurationProperties(prefix = "app.common")
 	 */
 
-	public static CommonProperties instance;
+	private static CommonProperties instance;
 
 	private String name;
 	private String db1Url;
@@ -44,6 +44,10 @@ public class CommonProperties {
 		log.info("Proxy Port: {}", proxyPort);
 		log.info("Proxy Username: {}", proxyUsername);
 		log.info("Proxy Password: {}", proxyPassword);
+	}
+
+	public static CommonProperties getInstance() {
+		return instance;
 	}
 
 	@PreDestroy
