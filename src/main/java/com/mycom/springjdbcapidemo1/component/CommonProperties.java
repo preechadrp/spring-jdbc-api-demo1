@@ -14,6 +14,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CommonProperties {
 
+	/*
+	 * ตัวอย่างการอ่าน config แบบ @ConfigurationProperties(prefix = "app.common")
+	 */
+
 	public static CommonProperties instance;
 
 	private String name;
