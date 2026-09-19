@@ -14,12 +14,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CommonConfig {
 
-	/*
-	 * ตัวอย่างการอ่าน config แบบ @ConfigurationProperties(prefix = "app.common")
-	 */
-
-	private static CommonConfig instance;
-
 	private String name;
 	private String db1Url;
 	private String db1DriverClassName;
@@ -32,8 +26,6 @@ public class CommonConfig {
 
 	@PostConstruct
 	public void init() {
-		instance = this;//ช่วยให้ code แบบเก่าสามารถดึงไปใช้งานโดยไม่ต้องใช้หลักการ injection ของ spring
-
 		log.info("===== CommonConfig =====");
 		log.info("Name = {}", name);
 		log.info("DB1 URL = {}", db1Url);
@@ -44,11 +36,6 @@ public class CommonConfig {
 		log.info("Proxy Port = {}", proxyPort);
 		log.info("Proxy Username = {}", proxyUsername);
 		log.info("Proxy Password = {}", proxyPassword);
-	}
-
-	public static CommonConfig getInstance() {
-		//ตัวอย่างการใช้งานเช่น   CommonConfig.getInstance().getDb1Url(); เป็นต้น
-		return instance;
 	}
 
 	@PreDestroy

@@ -10,13 +10,13 @@ import lombok.extern.slf4j.Slf4j;
 @Component
 @Getter
 @Slf4j
-public class AppConfig {
+public class ShareConfig {
 
 	/*
 	 * ตัวอย่างการอ่าน config แบบ @Value("${....}")
 	 */
 
-	private static AppConfig instance;
+	private static ShareConfig instance;
 
 	@Value("${app.common.name}")
 	private String name;
@@ -34,7 +34,7 @@ public class AppConfig {
 	public void init() {
 		instance = this;//ช่วยให้ code แบบเก่าสามารถดึงไปใช้งานโดยไม่ต้องใช้หลักการ injection ของ spring
 
-		log.info("==== AppConfig ====");
+		log.info("==== ShareConfig ====");
 		log.info("name = {}", instance.getName());
 		log.info("db1Url = {}", instance.getDb1Url());
 		log.info("db1DriverClassName = {}", instance.getDb1DriverClassName());
@@ -42,8 +42,8 @@ public class AppConfig {
 
 	}
 
-	public static AppConfig getInstance() {
-		//ตัวอย่างการใช้งานเช่น   AppConfig.getInstance().getDb1Url(); เป็นต้น
+	public static ShareConfig getInstance() {
+		//ตัวอย่างการใช้งานเช่น   ShareConfig.getInstance().getDb1Url(); เป็นต้น
 		return instance;
 	}
 }
