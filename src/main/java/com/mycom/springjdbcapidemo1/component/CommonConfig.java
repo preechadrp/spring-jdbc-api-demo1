@@ -35,15 +35,15 @@ public class CommonConfig {
 		instance = this;//ช่วยให้ code แบบเก่าสามารถดึงไปใช้งานโดยไม่ต้องใช้หลักการ injection ของ spring
 
 		log.info("===== CommonConfig =====");
-		log.info("Name: {}", name);
-		log.info("DB1 URL: {}", db1Url);
-		log.info("DB1 DriverClassName: {}", db1DriverClassName);
-		log.info("DB1 Username: {}", db1Username);
-		log.info("DB1 Password: {}", db1Password);
-		log.info("Proxy Host: {}", proxyHost);
-		log.info("Proxy Port: {}", proxyPort);
-		log.info("Proxy Username: {}", proxyUsername);
-		log.info("Proxy Password: {}", proxyPassword);
+		log.info("Name = {}", name);
+		log.info("DB1 URL = {}", db1Url);
+		log.info("DB1 DriverClassName = {}", db1DriverClassName);
+		log.info("DB1 Username = {}", db1Username);
+		log.info("DB1 Password = {}", db1Password);
+		log.info("Proxy Host = {}", proxyHost);
+		log.info("Proxy Port = {}", proxyPort);
+		log.info("Proxy Username = {}", proxyUsername);
+		log.info("Proxy Password = {}", proxyPassword);
 	}
 
 	public static CommonConfig getInstance() {
