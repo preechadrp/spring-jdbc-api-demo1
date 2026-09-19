@@ -7,7 +7,7 @@ import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
-@Component
+@Component("ShareConfig")
 @Getter
 @Slf4j
 public class ShareConfig {
@@ -30,6 +30,9 @@ public class ShareConfig {
 	@Value("${app.common.db1-username}")
 	private String db1Username;
 
+	@Value("${app.common.db1-password}")
+	private String db1Password;
+
 	@PostConstruct
 	public void init() {
 		instance = this;//ช่วยให้ code แบบเก่าสามารถดึงไปใช้งานโดยไม่ต้องใช้หลักการ injection ของ spring
@@ -39,6 +42,7 @@ public class ShareConfig {
 		log.info("db1Url = {}", instance.getDb1Url());
 		log.info("db1DriverClassName = {}", instance.getDb1DriverClassName());
 		log.info("db1Username = {}", instance.getDb1Username());
+		log.info("db1Password = {}", instance.getDb1Password());
 
 	}
 
