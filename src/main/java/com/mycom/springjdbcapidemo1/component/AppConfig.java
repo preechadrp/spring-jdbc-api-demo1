@@ -16,7 +16,7 @@ public class AppConfig {
 	 * ตัวอย่างการอ่าน config แบบ @Value("${....}")
 	 */
 
-	public static AppConfig instance;
+	private static AppConfig instance;
 
 	@Value("${app.common.name}")
 	private String name;
@@ -40,5 +40,9 @@ public class AppConfig {
 		log.info("db1DriverClassName = {}", instance.getDb1DriverClassName());
 		log.info("db1Username = {}", instance.getDb1Username());
 
+	}
+
+	public static AppConfig getInstance() {
+		return instance;
 	}
 }
