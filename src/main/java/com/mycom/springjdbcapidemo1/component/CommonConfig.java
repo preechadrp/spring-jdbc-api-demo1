@@ -34,7 +34,7 @@ public class CommonConfig {
 	public void init() {
 		instance = this;//ช่วยให้ code แบบเก่าสามารถดึงไปใช้งานโดยไม่ต้องใช้หลักการ injection ของ spring
 
-		log.info("===== Common Properties =====");
+		log.info("===== CommonConfig =====");
 		log.info("Name: {}", name);
 		log.info("DB1 URL: {}", db1Url);
 		log.info("DB1 DriverClassName: {}", db1DriverClassName);
@@ -47,6 +47,7 @@ public class CommonConfig {
 	}
 
 	public static CommonConfig getInstance() {
+		//ตัวอย่างการใช้งานเช่น   CommonConfig.getInstance().getDb1Url(); เป็นต้น
 		return instance;
 	}
 
